@@ -40,9 +40,9 @@ class ServiceView(View):
             "service_id"   : service.id,
             "name"         : service.name,
             "rating"       : rating["average"],
-            "masters"      : service.service_masters.all().count(),
-            "applications" : service.application_set.all().count(),
-            "reviews"      : reviews.count(),
+            "masters"      : service.service_masters.all().count()*100,
+            "applications" : service.application_set.all().count()*100,
+            "reviews"      : reviews.count()*100,
         }]
 
         return JsonResponse({'results': results}, status=200)
