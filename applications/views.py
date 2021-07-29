@@ -63,9 +63,10 @@ class MastersView(View):
             return JsonResponse({'message' : 'Does not matching masters'}, status = 404)
         reviews          = Review.objects.select_related('master')
         results          = [{
-                "id"        : master.id,
+                "master_id"    : master.id,
+                "user_id"      : user.id,
                 "image"        : master.profile_image,
-                "name"         : master.name,
+                "master_name"  : master.name,
                 "introduction" : master.introduction,
                 "average_rating" : reviews.filter(master = master).aggregate(average = Avg('rating'))["average"],
                 "review"       : reviews.filter(master = master).count()
