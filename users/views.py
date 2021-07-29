@@ -24,7 +24,7 @@ class UserSigninView(View):
                 key         = SECRET_KEY,
                 algorithm   = ALGORITHM
             )
-            return JsonResponse({"message":"SUCCESS", "access_token":access_token}, status=200)
+            return JsonResponse({"message":"SUCCESS", "access_token":access_token, 'user_id':user.id, 'name':user.name}, status=200)
 
         except jwt.ExpiredSignatureError:
             return JsonResponse({"message":"EXPIRED_TOKEN"}, status=400)
@@ -54,7 +54,7 @@ class KakaoSigninView(View):
 
             access_token = jwt.encode({'id': user.id}, SECRET_KEY, ALGORITHM)
 
-            return JsonResponse({'message':'SUCCESS','access_token' : access_token}, status = 200)
+            return JsonResponse({'message':'SUCCESS','access_token' : access_token, 'user_id':kakao_id, 'name':name}, status = 200)
 
         except KeyError:
             return JsonResponse({'message': 'INVALID_KEY'}, status = 400) 
@@ -90,3 +90,14 @@ class UserSignupView(View):
 
         except KeyError:
             return JsonResponse({"message":"KEY_ERROR"}, status=400)
+
+#  class UserInfoView(View):
+#      @user_signin_check
+#      def get(self, request):
+#          user = request.user
+#          results = [{
+#              "user_id" : user.id,
+#              "user_name" :user.name
+#          }]
+#
+#          return JsonResponse({"results":results}, status=200)
