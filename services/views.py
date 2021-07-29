@@ -4,7 +4,7 @@ from django.http         import JsonResponse
 from django.views        import View
 from django.db.models    import aggregates, Avg
 
-from services.models     import Service, Category, MasterService
+from services.models     import Service, Category, MasterService, Image
 from reviews.models      import Review
 from applications.models import Application
 from masters.models      import Master

@@ -1071,3 +1071,64 @@ AttributeError: 'Service' object has no attribute 'exists'
 2021-07-29 02:00:32,718 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 4; args=(4,)
 2021-07-29 02:00:32,719 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 4; args=(4,)
 2021-07-29 02:00:32,720 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 4; args=(4,)
+[2021-07-29 02:21:48 +0000] [23612] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 02:21:48 +0000] [23612] [INFO] Listening at: http://0.0.0.0:8000 (23612)
+[2021-07-29 02:21:48 +0000] [23612] [INFO] Using worker: sync
+[2021-07-29 02:21:48 +0000] [23613] [INFO] Booting worker with pid: 23613
+2021-07-29 02:22:09,005 DEBUG (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None
+2021-07-29 02:22:09,006 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:22:09,007 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 1 LIMIT 21; args=(1,)
+2021-07-29 02:22:09,009 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:22:09,011 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 1; args=(1,)
+2021-07-29 02:22:09,012 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 1; args=(1,)
+2021-07-29 02:22:09,013 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:22:09,026 DEBUG (0.001) SELECT `reviews`.`id`, `reviews`.`created_at`, `reviews`.`updated_at`, `reviews`.`content`, `reviews`.`rating`, `reviews`.`user_id`, `reviews`.`master_id`, `reviews`.`service_id` FROM `reviews` WHERE `reviews`.`service_id` = 1 LIMIT 21; args=(1,)
+Internal Server Error: /services/1
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/services/views.py", line 46, in get
+    "image"         : Image.objects.get(service=service).image
+NameError: name 'Image' is not defined
+[2021-07-29 02:23:00 +0000] [23612] [INFO] Handling signal: term
+[2021-07-29 02:23:00 +0000] [23613] [INFO] Worker exiting (pid: 23613)
+[2021-07-29 02:23:00 +0000] [23612] [INFO] Shutting down: Master
+[2021-07-29 02:23:53 +0000] [23681] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 02:23:53 +0000] [23681] [INFO] Listening at: http://0.0.0.0:8000 (23681)
+[2021-07-29 02:23:53 +0000] [23681] [INFO] Using worker: sync
+[2021-07-29 02:23:53 +0000] [23682] [INFO] Booting worker with pid: 23682
+2021-07-29 02:23:55,467 DEBUG (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None
+2021-07-29 02:23:55,468 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:23:55,469 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 4 LIMIT 21; args=(4,)
+2021-07-29 02:23:55,471 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 4; args=(4,)
+2021-07-29 02:23:55,473 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 4; args=(4,)
+2021-07-29 02:23:55,475 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 4; args=(4,)
+2021-07-29 02:23:55,476 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 4; args=(4,)
+2021-07-29 02:23:55,477 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 21; args=(4,)
+2021-07-29 02:23:57,260 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:23:57,261 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 1 LIMIT 21; args=(1,)
+2021-07-29 02:23:57,262 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:23:57,264 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 1; args=(1,)
+2021-07-29 02:23:57,265 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 1; args=(1,)
+2021-07-29 02:23:57,267 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:23:57,268 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 21; args=(1,)
