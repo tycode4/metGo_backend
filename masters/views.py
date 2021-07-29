@@ -98,7 +98,7 @@ class KakaoSigninView(View):
                 gender          = kakao_profile['kakao_account']['gender']
                 )
 
-            access_token = jwt.encode({'user_id': user.id}, SECRET_KEY, ALGORITHM)
+            access_token = jwt.encode({'id': user.id}, SECRET_KEY, ALGORITHM)
 
             return JsonResponse({'message':'SUCCESS','access_token' : access_token}, status = 200)
 

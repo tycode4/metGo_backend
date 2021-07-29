@@ -15,6 +15,7 @@ def user_signin_check(func):
             access_token    = request.headers.get('Authorization')
             print(access_token)
             payload         = jwt.decode(access_token, SECRET_KEY, ALGORITHM)
+            print(payload)
             user            = User.objects.get(id=payload["id"])
             request.user    = user
             return func(self, request, *args, **kwargs)
