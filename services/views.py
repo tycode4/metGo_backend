@@ -43,6 +43,7 @@ class ServiceView(View):
             "masters"      : service.service_masters.all().count()*100,
             "applications" : service.application_set.all().count()*100,
             "reviews"      : reviews.count()*100,
+            "image"         : Image.objects.get(service=service).image
         }]
 
         return JsonResponse({'results': results}, status=200)
