@@ -1132,3 +1132,620 @@ NameError: name 'Image' is not defined
 2021-07-29 02:23:57,265 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 1; args=(1,)
 2021-07-29 02:23:57,267 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
 2021-07-29 02:23:57,268 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 21; args=(1,)
+[2021-07-29 02:39:06 +0000] [23929] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 02:39:06 +0000] [23929] [INFO] Listening at: http://0.0.0.0:8000 (23929)
+[2021-07-29 02:39:06 +0000] [23929] [INFO] Using worker: sync
+[2021-07-29 02:39:06 +0000] [23930] [INFO] Booting worker with pid: 23930
+Internal Server Error: /applications/services/4/masters
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/core/views.py", line 15, in wrapper
+    payload         = jwt.decode(access_token, SECRET_KEY, ALGORITHM)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/jwt/api_jwt.py", line 119, in decode
+    decoded = self.decode_complete(jwt, key, algorithms, options, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/jwt/api_jwt.py", line 106, in decode_complete
+    self._validate_claims(payload, merged_options, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/jwt/api_jwt.py", line 142, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/jwt/api_jwt.py", line 177, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2021-07-29 02:39:33,123 DEBUG (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None
+2021-07-29 02:39:33,124 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:39:33,125 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`email` = 'ecardenas@gmail.com' LIMIT 21; args=('ecardenas@gmail.com',)
+2021-07-29 02:39:40,628 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:39:40,629 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 02:39:40,632 DEBUG (0.001) SELECT `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id`, `services`.`id`, `services`.`name`, `services`.`category_id` FROM `applications` INNER JOIN `services` ON (`applications`.`service_id` = `services`.`id`) WHERE (`applications`.`service_id` = 4 AND `applications`.`user_id` = 32) LIMIT 21; args=(4, 32)
+2021-07-29 02:39:40,633 DEBUG (0.001) SELECT `regions`.`id`, `regions`.`name` FROM `regions` WHERE `regions`.`id` = 3 LIMIT 21; args=(3,)
+2021-07-29 02:39:40,636 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE (`masters`.`main_service_id` = 4 AND `masters`.`gender` = 'female' AND `masters`.`region_id` = 3 AND `masters`.`birth` BETWEEN '2006-07-29' AND '2016-07-29' AND `masters`.`career` BETWEEN 5 AND 10); args=(4, 'female', 3, '2006-07-29', '2016-07-29', 5, 10)
+2021-07-29 02:39:40,638 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`master_id` = 99; args=(99,)
+2021-07-29 02:39:40,640 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`master_id` = 99; args=(99,)
+2021-07-29 02:39:40,641 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`master_id` = 511; args=(511,)
+2021-07-29 02:39:40,642 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`master_id` = 511; args=(511,)
+2021-07-29 02:39:52,724 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:39:52,725 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:39:52,727 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:39:52,728 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:39:52,729 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:39:52,731 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:39:52,732 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:39:52,734 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:39:54,823 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:39:54,827 DEBUG (0.004) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 1 LIMIT 21; args=(1,)
+2021-07-29 02:39:54,829 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:39:54,831 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 1; args=(1,)
+2021-07-29 02:39:54,832 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 1; args=(1,)
+2021-07-29 02:39:54,834 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:39:54,835 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 21; args=(1,)
+2021-07-29 02:39:56,565 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:39:56,566 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:39:56,568 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:39:56,569 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:39:56,571 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:39:56,572 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:39:56,573 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:39:56,575 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:40:07,943 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:40:07,944 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 1 LIMIT 21; args=(1,)
+2021-07-29 02:40:07,946 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:40:07,947 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 1; args=(1,)
+2021-07-29 02:40:07,949 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 1; args=(1,)
+2021-07-29 02:40:07,950 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:40:07,952 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 21; args=(1,)
+Bad Request: /applications
+2021-07-29 02:40:26,677 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:40:26,678 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 1 LIMIT 21; args=(1,)
+2021-07-29 02:40:26,679 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:40:26,681 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 1; args=(1,)
+2021-07-29 02:40:26,682 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 1; args=(1,)
+2021-07-29 02:40:26,684 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:40:26,685 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 21; args=(1,)
+2021-07-29 02:40:27,073 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:40:27,074 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:40:27,075 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:40:27,077 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:40:27,078 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:40:27,079 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:40:27,081 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:40:27,082 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:43:24,293 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:43:24,294 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 1 LIMIT 21; args=(1,)
+2021-07-29 02:43:24,296 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:43:24,297 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 1; args=(1,)
+2021-07-29 02:43:24,299 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 1; args=(1,)
+2021-07-29 02:43:24,300 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:43:24,301 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 21; args=(1,)
+2021-07-29 02:45:27,227 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:45:27,228 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:45:27,229 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:45:27,231 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:45:27,232 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:45:27,234 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:45:27,235 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:45:27,236 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:45:46,122 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:45:46,122 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 2 LIMIT 21; args=(2,)
+2021-07-29 02:45:46,124 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 2; args=(2,)
+2021-07-29 02:45:46,126 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 2; args=(2,)
+2021-07-29 02:45:46,128 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 2; args=(2,)
+2021-07-29 02:45:46,129 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 2; args=(2,)
+2021-07-29 02:45:46,130 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 21; args=(2,)
+Bad Request: /applications
+2021-07-29 02:46:32,012 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:46:32,013 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 2 LIMIT 21; args=(2,)
+2021-07-29 02:46:32,015 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 2; args=(2,)
+2021-07-29 02:46:32,017 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 2; args=(2,)
+2021-07-29 02:46:32,018 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 2; args=(2,)
+2021-07-29 02:46:32,019 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 2; args=(2,)
+2021-07-29 02:46:32,021 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 21; args=(2,)
+Bad Request: /applications
+2021-07-29 02:47:14,265 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:47:14,266 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 2 LIMIT 21; args=(2,)
+2021-07-29 02:47:14,268 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 2; args=(2,)
+2021-07-29 02:47:14,270 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 2; args=(2,)
+2021-07-29 02:47:14,271 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 2; args=(2,)
+2021-07-29 02:47:14,272 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 2; args=(2,)
+2021-07-29 02:47:14,274 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 21; args=(2,)
+2021-07-29 02:47:55,862 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:47:55,863 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:47:55,865 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:47:55,866 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:47:55,868 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:47:55,869 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:47:55,870 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:47:55,872 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:48:01,822 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:01,823 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 6 LIMIT 21; args=(6,)
+2021-07-29 02:48:01,825 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:01,826 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:01,827 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:01,829 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:01,830 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 21; args=(6,)
+2021-07-29 02:48:04,014 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:04,015 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:48:04,016 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:48:04,018 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:48:04,019 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:48:04,021 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:48:04,023 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:48:04,024 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:48:05,099 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:05,100 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 6 LIMIT 21; args=(6,)
+2021-07-29 02:48:05,101 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:05,103 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:05,104 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:05,105 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:05,106 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 21; args=(6,)
+2021-07-29 02:48:06,624 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:06,625 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:48:06,627 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:48:06,628 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:48:06,629 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:48:06,631 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:48:06,632 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:48:06,633 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:48:08,205 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:08,206 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 6 LIMIT 21; args=(6,)
+2021-07-29 02:48:08,207 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:08,209 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:08,211 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:08,213 DEBUG (0.002) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:08,215 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 21; args=(6,)
+2021-07-29 02:48:09,872 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:09,873 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:48:09,875 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:48:09,876 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:48:09,878 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:48:09,879 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:48:09,881 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:48:09,882 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:48:10,823 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:10,823 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 6 LIMIT 21; args=(6,)
+2021-07-29 02:48:10,825 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:10,826 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:10,828 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:10,829 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:10,830 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 21; args=(6,)
+2021-07-29 02:48:12,051 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:12,052 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:48:12,053 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:48:12,055 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:48:12,056 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:48:12,058 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:48:12,059 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:48:12,061 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:48:13,000 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:13,001 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 6 LIMIT 21; args=(6,)
+2021-07-29 02:48:13,003 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:13,004 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:13,006 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:13,007 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:13,008 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 21; args=(6,)
+2021-07-29 02:48:14,606 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:14,607 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:48:14,609 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:48:14,610 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:48:14,611 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:48:14,613 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:48:14,614 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:48:14,615 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:48:15,602 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:15,603 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 6 LIMIT 21; args=(6,)
+2021-07-29 02:48:15,604 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:15,606 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:15,607 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:15,608 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 6; args=(6,)
+2021-07-29 02:48:15,610 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 21; args=(6,)
+2021-07-29 02:48:19,308 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:19,309 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:48:19,311 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:48:19,312 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:48:19,313 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:48:19,315 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:48:19,316 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:48:19,318 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:48:20,305 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:20,306 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 3; args=(3,)
+2021-07-29 02:48:20,307 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 18 LIMIT 1; args=(18,)
+2021-07-29 02:48:20,309 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 19 LIMIT 1; args=(19,)
+2021-07-29 02:48:20,310 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 20 LIMIT 1; args=(20,)
+2021-07-29 02:48:20,312 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 21 LIMIT 1; args=(21,)
+2021-07-29 02:48:20,313 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 22 LIMIT 1; args=(22,)
+2021-07-29 02:48:20,314 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 23 LIMIT 1; args=(23,)
+2021-07-29 02:48:21,431 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:21,431 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 3 LIMIT 21; args=(3,)
+2021-07-29 02:48:21,433 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 3; args=(3,)
+2021-07-29 02:48:21,435 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 3; args=(3,)
+2021-07-29 02:48:21,436 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 3; args=(3,)
+2021-07-29 02:48:21,437 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 3; args=(3,)
+2021-07-29 02:48:21,439 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 21; args=(3,)
+2021-07-29 02:48:41,888 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:41,889 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:48:41,890 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:48:41,892 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:48:41,893 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:48:41,895 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:48:41,896 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:48:41,898 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:48:42,690 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:42,691 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 1 LIMIT 21; args=(1,)
+2021-07-29 02:48:42,692 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:48:42,694 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 1; args=(1,)
+2021-07-29 02:48:42,695 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 1; args=(1,)
+2021-07-29 02:48:42,697 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:48:42,698 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 21; args=(1,)
+2021-07-29 02:48:45,015 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:48:45,016 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:48:45,018 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:48:45,019 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:48:45,020 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:48:45,022 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:48:45,023 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:48:45,025 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:50:20,859 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:50:20,860 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:50:20,861 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:50:20,863 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:50:20,864 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:50:20,865 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:50:20,867 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:50:20,868 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:50:34,103 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:50:34,104 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:50:34,106 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:50:34,108 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:50:34,109 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:50:34,110 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:50:34,112 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:50:34,113 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:50:35,033 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:50:35,034 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:50:35,036 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:50:35,037 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:50:35,039 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:50:35,040 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:50:35,041 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:50:35,043 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:50:42,057 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:50:42,058 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE (`users`.`email` = 'jungzkxm@daum.net' AND `users`.`gender` = 'male' AND `users`.`kakao_id` = 1815246184 AND `users`.`name` = '성정준') LIMIT 21; args=('jungzkxm@daum.net', 'male', 1815246184, '성정준')
+2021-07-29 02:50:42,061 DEBUG (0.001) INSERT INTO `users` (`created_at`, `updated_at`, `kakao_id`, `name`, `password`, `phone`, `gender`, `email`, `birth`) VALUES ('2021-07-29 02:50:42.060314', '2021-07-29 02:50:42.060361', 1815246184, '성정준', '', NULL, 'male', 'jungzkxm@daum.net', NULL); args=['2021-07-29 02:50:42.060314', '2021-07-29 02:50:42.060361', 1815246184, '성정준', '', None, 'male', 'jungzkxm@daum.net', None]
+2021-07-29 02:50:44,242 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:50:44,243 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 3 LIMIT 21; args=(3,)
+2021-07-29 02:50:44,245 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 3; args=(3,)
+2021-07-29 02:50:44,246 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 3; args=(3,)
+2021-07-29 02:50:44,248 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 3; args=(3,)
+2021-07-29 02:50:44,249 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 3; args=(3,)
+2021-07-29 02:50:44,250 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 21; args=(3,)
+2021-07-29 02:50:45,387 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:50:45,388 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 02:50:45,390 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 02:50:45,391 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 02:50:45,393 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 02:50:45,394 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 02:50:45,397 DEBUG (0.002) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 02:50:45,398 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 02:51:54,287 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:51:54,288 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 2 LIMIT 21; args=(2,)
+2021-07-29 02:51:54,290 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 2; args=(2,)
+2021-07-29 02:51:54,292 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 2; args=(2,)
+2021-07-29 02:51:54,293 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 2; args=(2,)
+2021-07-29 02:51:54,294 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 2; args=(2,)
+2021-07-29 02:51:54,296 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 21; args=(2,)
+[2021-07-29 02:53:06 +0000] [23929] [INFO] Handling signal: term
+[2021-07-29 02:53:06 +0000] [23930] [INFO] Worker exiting (pid: 23930)
+[2021-07-29 02:53:06 +0000] [23929] [INFO] Shutting down: Master
+[2021-07-29 02:53:12 +0000] [23977] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 02:53:12 +0000] [23977] [INFO] Listening at: http://0.0.0.0:8000 (23977)
+[2021-07-29 02:53:12 +0000] [23977] [INFO] Using worker: sync
+[2021-07-29 02:53:12 +0000] [23978] [INFO] Booting worker with pid: 23978
+Internal Server Error: /applications/services/4/masters
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 556, in resolve
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 598, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 591, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 855, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ubuntu/wecode/metgo_test/metGo/urls.py", line 3, in <module>
+    from services.views import ServicesView, CategoryView
+  File "/home/ubuntu/wecode/metgo_test/services/views.py", line 11, in <module>
+    from core.views import users_signin_check
+ImportError: cannot import name 'users_signin_check' from 'core.views' (/home/ubuntu/wecode/metgo_test/core/views.py)
+Internal Server Error: /services/1
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 556, in resolve
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 598, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 591, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 855, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ubuntu/wecode/metgo_test/metGo/urls.py", line 3, in <module>
+    from services.views import ServicesView, CategoryView
+  File "/home/ubuntu/wecode/metgo_test/services/views.py", line 11, in <module>
+    from core.views import users_signin_check
+ImportError: cannot import name 'users_signin_check' from 'core.views' (/home/ubuntu/wecode/metgo_test/core/views.py)
+Internal Server Error: /users/signin
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 556, in resolve
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 598, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 591, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 855, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ubuntu/wecode/metgo_test/metGo/urls.py", line 3, in <module>
+    from services.views import ServicesView, CategoryView
+  File "/home/ubuntu/wecode/metgo_test/services/views.py", line 11, in <module>
+    from core.views import users_signin_check
+ImportError: cannot import name 'users_signin_check' from 'core.views' (/home/ubuntu/wecode/metgo_test/core/views.py)
+Internal Server Error: /users/signin
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 556, in resolve
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 598, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 591, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 855, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ubuntu/wecode/metgo_test/metGo/urls.py", line 3, in <module>
+    from services.views import ServicesView, CategoryView
+  File "/home/ubuntu/wecode/metgo_test/services/views.py", line 11, in <module>
+    from core.views import users_signin_check
+ImportError: cannot import name 'users_signin_check' from 'core.views' (/home/ubuntu/wecode/metgo_test/core/views.py)
+[2021-07-29 02:55:39 +0000] [23977] [INFO] Handling signal: term
+[2021-07-29 02:55:39 +0000] [23978] [INFO] Worker exiting (pid: 23978)
+[2021-07-29 02:55:39 +0000] [23977] [INFO] Shutting down: Master
+[2021-07-29 02:55:46 +0000] [24047] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 02:55:46 +0000] [24047] [INFO] Listening at: http://0.0.0.0:8000 (24047)
+[2021-07-29 02:55:46 +0000] [24047] [INFO] Using worker: sync
+[2021-07-29 02:55:46 +0000] [24048] [INFO] Booting worker with pid: 24048
+2021-07-29 02:55:50,641 DEBUG (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None
+2021-07-29 02:55:50,642 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:55:50,643 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`email` = 'ecardenas@gmail.com' LIMIT 21; args=('ecardenas@gmail.com',)
+2021-07-29 02:56:13,965 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 02:56:13,966 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 02:56:13,968 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 1 LIMIT 21; args=(1,)
+2021-07-29 02:56:13,970 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:56:13,971 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `masters` INNER JOIN `master_services` ON (`masters`.`id` = `master_services`.`master_id`) WHERE `master_services`.`service_id` = 1; args=(1,)
+2021-07-29 02:56:13,973 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `applications` WHERE `applications`.`service_id` = 1; args=(1,)
+2021-07-29 02:56:13,974 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`service_id` = 1; args=(1,)
+2021-07-29 02:56:13,976 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 21; args=(1,)
+[2021-07-29 03:00:49 +0000] [24047] [INFO] Handling signal: term
+[2021-07-29 03:00:49 +0000] [24048] [INFO] Worker exiting (pid: 24048)
+[2021-07-29 03:00:49 +0000] [24047] [INFO] Shutting down: Master
+[2021-07-29 03:01:01 +0000] [24132] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 03:01:01 +0000] [24132] [INFO] Listening at: http://0.0.0.0:8000 (24132)
+[2021-07-29 03:01:01 +0000] [24132] [INFO] Using worker: sync
+[2021-07-29 03:01:01 +0000] [24133] [INFO] Booting worker with pid: 24133
+2021-07-29 03:01:52,801 DEBUG (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None
+2021-07-29 03:01:52,801 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 03:01:52,802 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+Internal Server Error: /users/matchingmasters
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/core/views.py", line 18, in wrapper
+    return func(self, request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/quotations/views.py", line 48, in get
+    data = json.loads(request.body)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2021-07-29 03:02:05,824 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 03:02:05,825 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`email` = 'ecardenas@gmail.com' LIMIT 21; args=('ecardenas@gmail.com',)
+2021-07-29 03:02:14,652 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 03:02:14,653 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+Internal Server Error: /users/matchingmasters
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/core/views.py", line 18, in wrapper
+    return func(self, request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/quotations/views.py", line 48, in get
+    data = json.loads(request.body)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Bad Request: /services/2
+2021-07-29 03:02:53,789 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 03:02:53,791 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 03:02:53,792 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 03:02:53,794 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 03:02:53,795 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 03:02:53,797 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 03:02:53,798 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 03:02:53,799 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 03:02:56,522 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 03:02:56,523 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`category_id` = 1; args=(1,)
+2021-07-29 03:02:56,525 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 1 LIMIT 1; args=(1,)
+2021-07-29 03:02:56,526 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 2 LIMIT 1; args=(2,)
+2021-07-29 03:02:56,528 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 3 LIMIT 1; args=(3,)
+2021-07-29 03:02:56,529 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 4 LIMIT 1; args=(4,)
+2021-07-29 03:02:56,530 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 5 LIMIT 1; args=(5,)
+2021-07-29 03:02:56,532 DEBUG (0.001) SELECT `images`.`id`, `images`.`image`, `images`.`service_id` FROM `images` WHERE `images`.`service_id` = 6 LIMIT 1; args=(6,)
+2021-07-29 03:03:01,488 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 03:03:01,489 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE (`users`.`email` = 'jungzkxm@daum.net' AND `users`.`gender` = 'male' AND `users`.`kakao_id` = 1815246184 AND `users`.`name` = '성정준') LIMIT 21; args=('jungzkxm@daum.net', 'male', 1815246184, '성정준')
+2021-07-29 03:05:04,899 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 03:05:04,900 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+Internal Server Error: /users/matchingmasters
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/core/views.py", line 18, in wrapper
+    user            = User.objects.get(id=payload["id"])
+  File "/home/ubuntu/wecode/metgo_test/quotations/views.py", line 48, in get
+    data = json.loads(request.body)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2021-07-29 03:05:21 +0000] [24132] [INFO] Handling signal: term
+[2021-07-29 03:05:21 +0000] [24133] [INFO] Worker exiting (pid: 24133)
+[2021-07-29 03:05:22 +0000] [24132] [INFO] Shutting down: Master
+[2021-07-29 03:22:05 +0000] [24625] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 03:22:05 +0000] [24625] [INFO] Listening at: http://0.0.0.0:8000 (24625)
+[2021-07-29 03:22:05 +0000] [24625] [INFO] Using worker: sync
+[2021-07-29 03:22:05 +0000] [24626] [INFO] Booting worker with pid: 24626
+2021-07-29 03:22:27,980 DEBUG (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None
+2021-07-29 03:22:27,980 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 03:22:27,981 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+Internal Server Error: /users/matchingmasters
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/core/views.py", line 20, in wrapper
+    return func(self, request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/quotations/views.py", line 48, in get
+    data = json.loads(request.body)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2021-07-29 03:23:57 +0000] [24625] [INFO] Handling signal: term
+[2021-07-29 03:23:57 +0000] [24626] [INFO] Worker exiting (pid: 24626)
+1
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MzIsImV4cCI6MTYyNzUzMTUzMH0.H43ShEBsoDFzUtnvwXCZ7Y9gixqiHx-W2dnGbfF6d4U
+[2021-07-29 03:23:57 +0000] [24625] [INFO] Shutting down: Master

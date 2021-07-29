@@ -41,3 +41,17 @@ class QuotationView(View):
             return JsonResponse({'message' : 'Transaction Accepted'}, status = 201)
         Quotation.objects.get(id=quotation_id).delete()
         return JsonResponse({'message' : 'Transaction Denied'}, status = 201)
+
+class MatchingMastersView(View):
+    @user_signin_check
+    def get(self, request):
+        user = request.user
+        #  user = User.objects.get(id=request.GET.get('user'))
+        applications = Application.objects.filter(user=user)
+        quotations = [Quotation.objects.filter(application=application) for application in applications]
+        for i in range(0,len(quotations)):
+            results=[{
+                "master_id" : quotation.master.id,
+                "master_name" : quotation.master.name
+            }for quotation in quotations[i]]
+        return JsonResponse({'results': results}, status=200)
