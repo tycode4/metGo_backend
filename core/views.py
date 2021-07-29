@@ -11,7 +11,9 @@ from masters.models import Master
 def user_signin_check(func):
     def wrapper(self,request, *args, **kwargs):
         try:
+            print(1)
             access_token    = request.headers.get('Authorization')
+            print(access_token)
             payload         = jwt.decode(access_token, SECRET_KEY, ALGORITHM)
             user            = User.objects.get(id=payload["id"])
             request.user    = user

@@ -8,6 +8,7 @@ from services.models     import Service, Category, MasterService, Image
 from reviews.models      import Review
 from applications.models import Application
 from masters.models      import Master
+from core.views import user_signin_check
 
 class CategoryView(View):
     def get(self, request):
@@ -31,12 +32,15 @@ class ServicesView(View):
         return JsonResponse({'services': service}, status=200)
 
 class ServiceView(View):
+    @user_signin_check
     def get(self, request, service_id):
-
+        user = request.user
         service = Service.objects.get(id=service_id)
         reviews = service.service_reviews.all()
         rating  = reviews.aggregate(average = Avg("rating"))
         results = [{
+            "user_id"     : user.id,
+            "user_name" : user.name,
             "service_id"   : service.id,
             "name"         : service.name,
             "rating"       : rating["average"],

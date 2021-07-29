@@ -35,8 +35,8 @@ class ApplicationView(View):
 class MastersView(View):
     @user_signin_check
     def get(self, request, service_id):
-        user_id          = request.user
-        application      = Application.objects.select_related('service').filter(service_id=service_id).get(user_id = user_id)
+        user          = request.user
+        application      = Application.objects.select_related('service').filter(service_id=service_id).get(user=user)
         gender           = application.gender
         age              = application.age
         career           = application.career
