@@ -32,8 +32,6 @@ class ServicesView(View):
 
 class ServiceView(View):
     def get(self, request, service_id):
-        if not Service.objects.get(id=service_id).exists():
-            return JsonResponse({'message' : 'Not Found page'}, status=404)
 
         service = Service.objects.get(id=service_id)
         reviews = service.service_reviews.all()
@@ -41,7 +39,7 @@ class ServiceView(View):
         results = [{
             "service_id"   : service.id,
             "name"         : service.name,
-            "rating"       : rating.average,
+            "rating"       : rating["average"],
             "masters"      : service.service_masters.all().count(),
             "applications" : service.application_set.all().count(),
             "reviews"      : reviews.count(),
