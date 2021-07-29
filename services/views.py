@@ -35,6 +35,7 @@ class ServiceView(View):
     @user_signin_check
     def get(self, request, service_id):
         user = request.user
+        print(user)
         service = Service.objects.get(id=service_id)
         reviews = service.service_reviews.all()
         rating  = reviews.aggregate(average = Avg("rating"))
