@@ -22,7 +22,7 @@ class ApplicationView(View):
             gender        = gender_choice[data["gender"]]
             Application.objects.update_or_create(
                 service_id  = data["service_id"],
-                user_id     = request.user,
+                user     = request.user,
                 defaults    = { "age"     : age,
                                 "career"  : career,
                                 "gender"  : gender,
@@ -63,10 +63,11 @@ class MastersView(View):
             return JsonResponse({'message' : 'Does not matching masters'}, status = 404)
         reviews          = Review.objects.select_related('master')
         results          = [{
+                "id"        : master.id,
                 "image"        : master.profile_image,
                 "name"         : master.name,
                 "introduction" : master.introduction,
-                "rating"       : reviews.filter(master = master).aggregate(average = Avg('rating'))["average"],
+                "average_rating" : reviews.filter(master = master).aggregate(average = Avg('rating'))["average"],
                 "review"       : reviews.filter(master = master).count()
             } for master in masters]
         return JsonResponse({'results' : results}, status = 200)

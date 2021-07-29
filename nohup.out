@@ -1,0 +1,688 @@
+[2021-07-29 00:30:19 +0000] [21369] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 00:30:19 +0000] [21369] [INFO] Listening at: http://0.0.0.0:8000 (21369)
+[2021-07-29 00:30:19 +0000] [21369] [INFO] Using worker: sync
+[2021-07-29 00:30:19 +0000] [21370] [INFO] Booting worker with pid: 21370
+[2021-07-29 00:30:19 +0000] [21370] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 972, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'metgo_test'
+[2021-07-29 00:30:19 +0000] [21370] [INFO] Worker exiting (pid: 21370)
+[2021-07-29 00:30:19 +0000] [21369] [INFO] Shutting down: Master
+[2021-07-29 00:30:19 +0000] [21369] [INFO] Reason: Worker failed to boot.
+[2021-07-29 00:32:06 +0000] [21375] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 00:32:06 +0000] [21375] [INFO] Listening at: http://0.0.0.0:8000 (21375)
+[2021-07-29 00:32:06 +0000] [21375] [INFO] Using worker: sync
+[2021-07-29 00:32:06 +0000] [21376] [INFO] Booting worker with pid: 21376
+[2021-07-29 00:32:06 +0000] [21376] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 972, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'metgo_test'
+[2021-07-29 00:32:06 +0000] [21376] [INFO] Worker exiting (pid: 21376)
+[2021-07-29 00:32:06 +0000] [21375] [INFO] Shutting down: Master
+[2021-07-29 00:32:06 +0000] [21375] [INFO] Reason: Worker failed to boot.
+[2021-07-29 00:32:18 +0000] [21377] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 00:32:18 +0000] [21377] [INFO] Listening at: http://0.0.0.0:8000 (21377)
+[2021-07-29 00:32:18 +0000] [21377] [INFO] Using worker: sync
+[2021-07-29 00:32:18 +0000] [21378] [INFO] Booting worker with pid: 21378
+[2021-07-29 00:32:18 +0000] [21378] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 855, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ubuntu/wecode/metgo_test/metGo/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/conf/__init__.py", line 82, in __getattr__
+    self._setup(name)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/conf/__init__.py", line 69, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/conf/__init__.py", line 170, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 855, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ubuntu/wecode/metgo_test/metGo/settings.py", line 3, in <module>
+    from my_settings import DATABASES, SECRET_KEY
+  File "/home/ubuntu/wecode/metgo_test/my_settings.py", line 7
+    'HOST': 'project-database.csoj9lvubxzw.ap-northeast-2.rds.amazonaws.com",
+                                                                             ^
+SyntaxError: EOL while scanning string literal
+[2021-07-29 00:32:18 +0000] [21378] [INFO] Worker exiting (pid: 21378)
+[2021-07-29 00:32:18 +0000] [21377] [INFO] Shutting down: Master
+[2021-07-29 00:32:18 +0000] [21377] [INFO] Reason: Worker failed to boot.
+[2021-07-29 00:32:44 +0000] [21384] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 00:32:44 +0000] [21384] [INFO] Listening at: http://0.0.0.0:8000 (21384)
+[2021-07-29 00:32:44 +0000] [21384] [INFO] Using worker: sync
+[2021-07-29 00:32:44 +0000] [21385] [INFO] Booting worker with pid: 21385
+[2021-07-29 00:32:44 +0000] [21385] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 855, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ubuntu/wecode/metgo_test/metGo/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/conf/__init__.py", line 82, in __getattr__
+    self._setup(name)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/conf/__init__.py", line 69, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/conf/__init__.py", line 170, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 855, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ubuntu/wecode/metgo_test/metGo/settings.py", line 3, in <module>
+    from my_settings import DATABASES, SECRET_KEY
+  File "/home/ubuntu/wecode/metgo_test/my_settings.py", line 7
+    'HOST': 'project-database.csoj9lvubxzw.ap-northeast-2.rds.amazonaws.com",
+                                                                             ^
+SyntaxError: EOL while scanning string literal
+[2021-07-29 00:32:44 +0000] [21385] [INFO] Worker exiting (pid: 21385)
+[2021-07-29 00:32:44 +0000] [21384] [INFO] Shutting down: Master
+[2021-07-29 00:32:44 +0000] [21384] [INFO] Reason: Worker failed to boot.
+[2021-07-29 00:33:18 +0000] [21396] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 00:33:18 +0000] [21396] [INFO] Listening at: http://0.0.0.0:8000 (21396)
+[2021-07-29 00:33:18 +0000] [21396] [INFO] Using worker: sync
+[2021-07-29 00:33:18 +0000] [21397] [INFO] Booting worker with pid: 21397
+Internal Server Error: /masters/signup
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 556, in resolve
+    for pattern in self.url_patterns:
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 598, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/resolvers.py", line 591, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 855, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ubuntu/wecode/metgo_test/metGo/urls.py", line 10, in <module>
+    path('masters', include('masters.urls')),
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 855, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ubuntu/wecode/metgo_test/masters/urls.py", line 3, in <module>
+    from masters.views import MasterSignupView, MasterSigninView, KakaoSigninView, MasterView
+  File "/home/ubuntu/wecode/metgo_test/masters/views.py", line 18, in <module>
+    from core.views     import master_signin_check, AWSAPI
+  File "/home/ubuntu/wecode/metgo_test/core/views.py", line 2, in <module>
+    import boto3
+ModuleNotFoundError: No module named 'boto3'
+Internal Server Error: /masters/signup
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 234, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/MySQLdb/__init__.py", line 130, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1049, "Unknown database 'metGo_test'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/masters/views.py", line 40, in post
+    if Master.objects.filter(email=email).exists():
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/query.py", line 808, in exists
+    return self.query.has_results(using=self.db)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/sql/query.py", line 552, in has_results
+    return compiler.has_results()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1145, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1173, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 234, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/MySQLdb/__init__.py", line 130, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+django.db.utils.OperationalError: (1049, "Unknown database 'metGo_test'")
+Internal Server Error: /masters/signup
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 234, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/MySQLdb/__init__.py", line 130, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1049, "Unknown database 'metGo_test'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/masters/views.py", line 40, in post
+    if Master.objects.filter(email=email).exists():
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/query.py", line 808, in exists
+    return self.query.has_results(using=self.db)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/sql/query.py", line 552, in has_results
+    return compiler.has_results()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1145, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1173, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 234, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/MySQLdb/__init__.py", line 130, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+django.db.utils.OperationalError: (1049, "Unknown database 'metGo_test'")
+[2021-07-29 00:35:22 +0000] [21396] [INFO] Handling signal: term
+[2021-07-29 00:35:22 +0000] [21397] [INFO] Worker exiting (pid: 21397)
+[2021-07-29 00:35:22 +0000] [21396] [INFO] Shutting down: Master
+[2021-07-29 00:55:21 +0000] [21480] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 00:55:21 +0000] [21480] [INFO] Listening at: http://0.0.0.0:8000 (21480)
+[2021-07-29 00:55:21 +0000] [21480] [INFO] Using worker: sync
+[2021-07-29 00:55:21 +0000] [21481] [INFO] Booting worker with pid: 21481
+2021-07-29 00:55:25,454 DEBUG (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None
+2021-07-29 00:55:25,454 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 00:55:25,455 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`email` = 'ecardenas@gmail.com' LIMIT 21; args=('ecardenas@gmail.com',)
+2021-07-29 00:55:53,066 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 00:55:53,067 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 00:55:53,069 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 3 LIMIT 21; args=(3,)
+2021-07-29 00:55:53,071 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 1 LIMIT 21; args=(1,)
+2021-07-29 00:55:53,075 DEBUG (0.003) SELECT `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id` FROM `applications` WHERE (`applications`.`user_id` = 32 AND `applications`.`service_id` = 1) LIMIT 21; args=(32, 1)
+2021-07-29 00:55:53,079 DEBUG (0.003) INSERT INTO `quotations` (`created_at`, `updated_at`, `application_id`, `price`, `is_completed`, `master_id`) VALUES ('2021-07-29 00:55:53.076420', '2021-07-29 00:55:53.076466', 3, NULL, 0, 3); args=['2021-07-29 00:55:53.076420', '2021-07-29 00:55:53.076466', 3, None, False, 3]
+2021-07-29 00:55:56,450 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 00:55:56,451 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 00:55:56,453 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 226 LIMIT 21; args=(226,)
+2021-07-29 00:55:56,454 DEBUG (0.001) SELECT `services`.`id`, `services`.`name`, `services`.`category_id` FROM `services` WHERE `services`.`id` = 3 LIMIT 21; args=(3,)
+2021-07-29 00:55:56,456 DEBUG (0.001) SELECT `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id` FROM `applications` WHERE (`applications`.`user_id` = 32 AND `applications`.`service_id` = 3) LIMIT 21; args=(32, 3)
+2021-07-29 00:55:56,459 DEBUG (0.002) INSERT INTO `quotations` (`created_at`, `updated_at`, `application_id`, `price`, `is_completed`, `master_id`) VALUES ('2021-07-29 00:55:56.456790', '2021-07-29 00:55:56.456828', 1, NULL, 0, 226); args=['2021-07-29 00:55:56.456790', '2021-07-29 00:55:56.456828', 1, None, False, 226]
+2021-07-29 00:56:28,976 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 00:56:28,977 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 1 LIMIT 21; args=(1,)
+2021-07-29 00:56:28,980 DEBUG (0.001) SELECT `quotations`.`id`, `quotations`.`created_at`, `quotations`.`updated_at`, `quotations`.`application_id`, `quotations`.`price`, `quotations`.`is_completed`, `quotations`.`master_id`, `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id` FROM `quotations` INNER JOIN `applications` ON (`quotations`.`application_id` = `applications`.`id`) WHERE `quotations`.`master_id` = 1; args=(1,)
+2021-07-29 00:58:39,484 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 00:58:39,485 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`email` = 'patrickjackson@perry.info' LIMIT 21; args=('patrickjackson@perry.info',)
+2021-07-29 00:58:52,730 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 00:58:52,731 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+2021-07-29 00:58:52,733 DEBUG (0.001) SELECT `quotations`.`id`, `quotations`.`created_at`, `quotations`.`updated_at`, `quotations`.`application_id`, `quotations`.`price`, `quotations`.`is_completed`, `quotations`.`master_id`, `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id` FROM `quotations` INNER JOIN `applications` ON (`quotations`.`application_id` = `applications`.`id`) WHERE `quotations`.`master_id` = 215; args=(215,)
+2021-07-29 00:58:52,735 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 01:00:55,041 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:00:55,042 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+2021-07-29 01:00:55,046 DEBUG (0.003) UPDATE `quotations` SET `is_completed` = 1 WHERE `quotations`.`id` = 742; args=(True, 742)
+2021-07-29 01:01:01,735 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:01:01,736 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+2021-07-29 01:01:01,740 DEBUG (0.003) UPDATE `quotations` SET `is_completed` = 1 WHERE `quotations`.`id` = 742; args=(True, 742)
+2021-07-29 01:01:05,836 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:01:05,837 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+2021-07-29 01:01:05,840 DEBUG (0.003) UPDATE `quotations` SET `is_completed` = 1 WHERE `quotations`.`id` = 742; args=(True, 742)
+2021-07-29 01:01:07,454 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:01:07,455 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+2021-07-29 01:01:07,459 DEBUG (0.003) UPDATE `quotations` SET `is_completed` = 1 WHERE `quotations`.`id` = 742; args=(True, 742)
+2021-07-29 01:01:08,295 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:01:08,297 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+2021-07-29 01:01:08,300 DEBUG (0.003) UPDATE `quotations` SET `is_completed` = 1 WHERE `quotations`.`id` = 742; args=(True, 742)
+2021-07-29 01:01:09,035 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:01:09,036 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+2021-07-29 01:01:09,040 DEBUG (0.003) UPDATE `quotations` SET `is_completed` = 1 WHERE `quotations`.`id` = 742; args=(True, 742)
+2021-07-29 01:01:27,069 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:01:27,070 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+Internal Server Error: /quotations
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/core/views.py", line 32, in wrapper
+    return func(self, request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/quotations/views.py", line 37, in patch
+    data         = json.loads(request.body)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 3 column 20 (char 45)
+2021-07-29 01:01:34,808 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:01:34,809 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+2021-07-29 01:01:34,811 DEBUG (0.001) SELECT `quotations`.`id`, `quotations`.`created_at`, `quotations`.`updated_at`, `quotations`.`application_id`, `quotations`.`price`, `quotations`.`is_completed`, `quotations`.`master_id` FROM `quotations` WHERE `quotations`.`id` = 742 LIMIT 21; args=(742,)
+2021-07-29 01:01:34,815 DEBUG (0.004) DELETE FROM `quotations` WHERE `quotations`.`id` IN (742); args=(742,)
+2021-07-29 01:01:35,452 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:01:35,453 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+2021-07-29 01:01:35,455 DEBUG (0.001) SELECT `quotations`.`id`, `quotations`.`created_at`, `quotations`.`updated_at`, `quotations`.`application_id`, `quotations`.`price`, `quotations`.`is_completed`, `quotations`.`master_id` FROM `quotations` WHERE `quotations`.`id` = 742 LIMIT 21; args=(742,)
+2021-07-29 01:01:35,466 DEBUG (0.001) SELECT `quotations`.`id`, `quotations`.`created_at`, `quotations`.`updated_at`, `quotations`.`application_id`, `quotations`.`price`, `quotations`.`is_completed`, `quotations`.`master_id` FROM `quotations` LIMIT 21; args=()
+Internal Server Error: /quotations
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/core/views.py", line 32, in wrapper
+    return func(self, request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/quotations/views.py", line 42, in patch
+    Quotation.objects.get(id=quotation_id).delete()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/query.py", line 435, in get
+    raise self.model.DoesNotExist(
+quotations.models.Quotation.DoesNotExist: Quotation matching query does not exist.
+2021-07-29 01:01:39,893 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:01:39,894 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+2021-07-29 01:01:39,895 DEBUG (0.001) UPDATE `quotations` SET `is_completed` = 1 WHERE `quotations`.`id` = 742; args=(True, 742)
+2021-07-29 01:01:46,293 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:01:46,294 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+2021-07-29 01:01:46,296 DEBUG (0.001) SELECT `quotations`.`id`, `quotations`.`created_at`, `quotations`.`updated_at`, `quotations`.`application_id`, `quotations`.`price`, `quotations`.`is_completed`, `quotations`.`master_id` FROM `quotations` WHERE `quotations`.`id` = 742 LIMIT 21; args=(742,)
+2021-07-29 01:01:46,306 DEBUG (0.001) SELECT `quotations`.`id`, `quotations`.`created_at`, `quotations`.`updated_at`, `quotations`.`application_id`, `quotations`.`price`, `quotations`.`is_completed`, `quotations`.`master_id` FROM `quotations` LIMIT 21; args=()
+Internal Server Error: /quotations
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/core/views.py", line 32, in wrapper
+    return func(self, request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/quotations/views.py", line 42, in patch
+    Quotation.objects.get(id=quotation_id).delete()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/query.py", line 435, in get
+    raise self.model.DoesNotExist(
+quotations.models.Quotation.DoesNotExist: Quotation matching query does not exist.
+2021-07-29 01:01:48,943 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:01:48,944 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+2021-07-29 01:01:48,945 DEBUG (0.001) UPDATE `quotations` SET `is_completed` = 1 WHERE `quotations`.`id` = 742; args=(True, 742)
+2021-07-29 01:01:51,927 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:01:51,928 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE `masters`.`id` = 215 LIMIT 21; args=(215,)
+2021-07-29 01:01:51,929 DEBUG (0.001) SELECT `quotations`.`id`, `quotations`.`created_at`, `quotations`.`updated_at`, `quotations`.`application_id`, `quotations`.`price`, `quotations`.`is_completed`, `quotations`.`master_id` FROM `quotations` WHERE `quotations`.`id` = 742 LIMIT 21; args=(742,)
+2021-07-29 01:01:51,939 DEBUG (0.001) SELECT `quotations`.`id`, `quotations`.`created_at`, `quotations`.`updated_at`, `quotations`.`application_id`, `quotations`.`price`, `quotations`.`is_completed`, `quotations`.`master_id` FROM `quotations` LIMIT 21; args=()
+Internal Server Error: /quotations
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/core/views.py", line 32, in wrapper
+    return func(self, request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/quotations/views.py", line 42, in patch
+    Quotation.objects.get(id=quotation_id).delete()
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/query.py", line 435, in get
+    raise self.model.DoesNotExist(
+quotations.models.Quotation.DoesNotExist: Quotation matching query does not exist.
+2021-07-29 01:03:50,499 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:03:50,501 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 01:03:50,502 DEBUG (0.001) SELECT `regions`.`id`, `regions`.`name` FROM `regions` WHERE `regions`.`name` = '중구' LIMIT 21; args=('중구',)
+Not Found: /applications
+2021-07-29 01:04:00,357 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:04:00,358 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 01:04:00,359 DEBUG (0.001) SELECT `regions`.`id`, `regions`.`name` FROM `regions` WHERE `regions`.`name` = '중구' LIMIT 21; args=('중구',)
+Not Found: /applications
+2021-07-29 01:04:17,681 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:04:17,682 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 01:04:17,684 DEBUG (0.001) SELECT `regions`.`id`, `regions`.`name` FROM `regions` WHERE `regions`.`name` = '중구' LIMIT 21; args=('중구',)
+2021-07-29 01:04:17,686 DEBUG (0.001) SELECT `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id` FROM `applications` WHERE (`applications`.`service_id` = 4 AND `applications`.`user_id` = 32) LIMIT 21 FOR UPDATE; args=(4, 32)
+2021-07-29 01:04:17,689 DEBUG (0.001) SAVEPOINT `s140196332970176_x1`; args=None
+2021-07-29 01:04:17,690 DEBUG (0.001) ROLLBACK TO SAVEPOINT `s140196332970176_x1`; args=None
+2021-07-29 01:04:17,690 DEBUG (0.000) RELEASE SAVEPOINT `s140196332970176_x1`; args=None
+2021-07-29 01:04:17,715 DEBUG (0.001) SELECT `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id` FROM `applications` LIMIT 21; args=()
+2021-07-29 01:04:17,719 DEBUG (0.001) SELECT `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id` FROM `applications` LIMIT 21; args=()
+Internal Server Error: /applications
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/query.py", line 581, in get_or_create
+    return self.get(**kwargs), False
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/query.py", line 435, in get
+    raise self.model.DoesNotExist(
+applications.models.Application.DoesNotExist: Application matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'User'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/core/views.py", line 18, in wrapper
+    return func(self, request, *args, **kwargs)
+  File "/home/ubuntu/wecode/metgo_test/applications/views.py", line 23, in post
+    Application.objects.update_or_create(
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/query.py", line 608, in update_or_create
+    obj, created = self.select_for_update().get_or_create(defaults, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/query.py", line 588, in get_or_create
+    return self.create(**params), True
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/base.py", line 763, in save_base
+    updated = self._save_table(
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/base.py", line 906, in _do_insert
+    return manager._insert(
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1415, in execute_sql
+    for sql, params in self.as_sql():
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1358, in as_sql
+    value_rows = [
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1359, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1359, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1300, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/fields/related.py", line 971, in get_db_prep_save
+    return self.target_field.get_db_prep_save(value, connection=connection)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 842, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 2486, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/home/ubuntu/miniconda3/envs/project/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <User: User object (32)>.
+[2021-07-29 01:05:10 +0000] [21480] [INFO] Handling signal: term
+[2021-07-29 01:05:10 +0000] [21481] [INFO] Worker exiting (pid: 21481)
+[2021-07-29 01:05:11 +0000] [21480] [INFO] Shutting down: Master
+[2021-07-29 01:05:13 +0000] [21506] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 01:05:13 +0000] [21506] [INFO] Listening at: http://0.0.0.0:8000 (21506)
+[2021-07-29 01:05:13 +0000] [21506] [INFO] Using worker: sync
+[2021-07-29 01:05:13 +0000] [21507] [INFO] Booting worker with pid: 21507
+2021-07-29 01:05:17,349 DEBUG (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None
+2021-07-29 01:05:17,349 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:05:17,350 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 01:05:17,353 DEBUG (0.002) SELECT `regions`.`id`, `regions`.`name` FROM `regions` WHERE `regions`.`name` = '중구' LIMIT 21; args=('중구',)
+2021-07-29 01:05:17,356 DEBUG (0.001) SELECT `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id` FROM `applications` WHERE (`applications`.`service_id` = 4 AND `applications`.`user_id` = 32) LIMIT 21 FOR UPDATE; args=(4, 32)
+2021-07-29 01:05:17,357 DEBUG (0.001) SAVEPOINT `s140539965300928_x1`; args=None
+2021-07-29 01:05:17,359 DEBUG (0.001) INSERT INTO `applications` (`created_at`, `updated_at`, `age`, `region_id`, `career`, `gender`, `user_id`, `service_id`) VALUES ('2021-07-29 01:05:17.358391', '2021-07-29 01:05:17.358435', 10, 2, 10, 'male', 32, 4); args=['2021-07-29 01:05:17.358391', '2021-07-29 01:05:17.358435', 10, 2, 10, 'male', 32, 4]
+2021-07-29 01:05:17,359 DEBUG (0.001) RELEASE SAVEPOINT `s140539965300928_x1`; args=None
+Bad Request: /applications/services/4/masters
+2021-07-29 01:08:16,691 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:08:16,692 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 01:08:16,695 DEBUG (0.001) SELECT `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id`, `services`.`id`, `services`.`name`, `services`.`category_id` FROM `applications` INNER JOIN `services` ON (`applications`.`service_id` = `services`.`id`) WHERE (`applications`.`service_id` = 4 AND `applications`.`user_id` = 32) LIMIT 21; args=(4, 32)
+2021-07-29 01:08:16,696 DEBUG (0.001) SELECT `regions`.`id`, `regions`.`name` FROM `regions` WHERE `regions`.`id` = 2 LIMIT 21; args=(2,)
+2021-07-29 01:08:16,700 DEBUG (0.002) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE (`masters`.`main_service_id` = 4 AND `masters`.`gender` = 'male' AND `masters`.`region_id` = 2 AND `masters`.`birth` BETWEEN '2001-07-29' AND '2011-07-29' AND `masters`.`career` BETWEEN 10 AND 15); args=(4, 'male', 2, '2001-07-29', '2011-07-29', 10, 15)
+2021-07-29 01:08:16,701 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`master_id` = 186; args=(186,)
+2021-07-29 01:08:16,703 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`master_id` = 186; args=(186,)
+2021-07-29 01:08:16,704 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`master_id` = 399; args=(399,)
+2021-07-29 01:08:16,706 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`master_id` = 399; args=(399,)
+2021-07-29 01:08:16,707 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`master_id` = 575; args=(575,)
+2021-07-29 01:08:16,708 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`master_id` = 575; args=(575,)
+2021-07-29 01:08:46,235 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:08:46,236 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 01:08:46,239 DEBUG (0.002) SELECT `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id`, `services`.`id`, `services`.`name`, `services`.`category_id` FROM `applications` INNER JOIN `services` ON (`applications`.`service_id` = `services`.`id`) WHERE (`applications`.`service_id` = 4 AND `applications`.`user_id` = 32) LIMIT 21; args=(4, 32)
+2021-07-29 01:08:46,241 DEBUG (0.001) SELECT `regions`.`id`, `regions`.`name` FROM `regions` WHERE `regions`.`id` = 2 LIMIT 21; args=(2,)
+2021-07-29 01:08:46,243 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE (`masters`.`main_service_id` = 4 AND `masters`.`gender` = 'male' AND `masters`.`region_id` = 2 AND `masters`.`birth` BETWEEN '2001-07-29' AND '2011-07-29' AND `masters`.`career` BETWEEN 10 AND 15); args=(4, 'male', 2, '2001-07-29', '2011-07-29', 10, 15)
+2021-07-29 01:08:46,245 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`master_id` = 186; args=(186,)
+2021-07-29 01:08:46,246 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`master_id` = 186; args=(186,)
+2021-07-29 01:08:46,248 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`master_id` = 399; args=(399,)
+2021-07-29 01:08:46,249 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`master_id` = 399; args=(399,)
+2021-07-29 01:08:46,250 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`master_id` = 575; args=(575,)
+2021-07-29 01:08:46,252 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`master_id` = 575; args=(575,)
+2021-07-29 01:09:44,217 DEBUG (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:09:44,218 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 01:09:44,219 DEBUG (0.001) SELECT `regions`.`id`, `regions`.`name` FROM `regions` WHERE `regions`.`name` = '용산구' LIMIT 21; args=('용산구',)
+2021-07-29 01:09:44,221 DEBUG (0.001) SELECT `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id` FROM `applications` WHERE (`applications`.`service_id` = 4 AND `applications`.`user_id` = 32) LIMIT 21 FOR UPDATE; args=(4, 32)
+2021-07-29 01:09:44,223 DEBUG (0.001) UPDATE `applications` SET `created_at` = '2021-07-29 01:05:17.358391', `updated_at` = '2021-07-29 01:09:44.222267', `age` = 5, `region_id` = 3, `career` = 5, `gender` = 'female', `user_id` = 32, `service_id` = 4 WHERE `applications`.`id` = 20; args=('2021-07-29 01:05:17.358391', '2021-07-29 01:09:44.222267', 5, 3, 5, 'female', 32, 4, 20)
+2021-07-29 01:09:49,031 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:09:49,032 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 01:09:49,034 DEBUG (0.001) SELECT `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id`, `services`.`id`, `services`.`name`, `services`.`category_id` FROM `applications` INNER JOIN `services` ON (`applications`.`service_id` = `services`.`id`) WHERE (`applications`.`service_id` = 4 AND `applications`.`user_id` = 32) LIMIT 21; args=(4, 32)
+2021-07-29 01:09:49,036 DEBUG (0.001) SELECT `regions`.`id`, `regions`.`name` FROM `regions` WHERE `regions`.`id` = 3 LIMIT 21; args=(3,)
+2021-07-29 01:09:49,038 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE (`masters`.`main_service_id` = 4 AND `masters`.`gender` = 'female' AND `masters`.`region_id` = 3 AND `masters`.`birth` BETWEEN '2006-07-29' AND '2016-07-29' AND `masters`.`career` BETWEEN 5 AND 10); args=(4, 'female', 3, '2006-07-29', '2016-07-29', 5, 10)
+2021-07-29 01:09:49,040 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`master_id` = 99; args=(99,)
+2021-07-29 01:09:49,042 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`master_id` = 99; args=(99,)
+2021-07-29 01:09:49,043 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`master_id` = 511; args=(511,)
+2021-07-29 01:09:49,044 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`master_id` = 511; args=(511,)
+[2021-07-29 01:10:16 +0000] [21506] [INFO] Handling signal: term
+[2021-07-29 01:10:16 +0000] [21507] [INFO] Worker exiting (pid: 21507)
+[2021-07-29 01:10:16 +0000] [21506] [INFO] Shutting down: Master
+[2021-07-29 01:13:46 +0000] [21595] [INFO] Starting gunicorn 20.1.0
+[2021-07-29 01:13:46 +0000] [21595] [INFO] Listening at: http://0.0.0.0:8000 (21595)
+[2021-07-29 01:13:46 +0000] [21595] [INFO] Using worker: sync
+[2021-07-29 01:13:46 +0000] [21596] [INFO] Booting worker with pid: 21596
+2021-07-29 01:13:49,497 DEBUG (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None
+2021-07-29 01:13:49,498 DEBUG (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None
+2021-07-29 01:13:49,498 DEBUG (0.001) SELECT `users`.`id`, `users`.`created_at`, `users`.`updated_at`, `users`.`kakao_id`, `users`.`name`, `users`.`password`, `users`.`phone`, `users`.`gender`, `users`.`email`, `users`.`birth` FROM `users` WHERE `users`.`id` = 32 LIMIT 21; args=(32,)
+2021-07-29 01:13:49,501 DEBUG (0.001) SELECT `applications`.`id`, `applications`.`created_at`, `applications`.`updated_at`, `applications`.`age`, `applications`.`region_id`, `applications`.`career`, `applications`.`gender`, `applications`.`user_id`, `applications`.`service_id`, `services`.`id`, `services`.`name`, `services`.`category_id` FROM `applications` INNER JOIN `services` ON (`applications`.`service_id` = `services`.`id`) WHERE (`applications`.`service_id` = 4 AND `applications`.`user_id` = 32) LIMIT 21; args=(4, 32)
+2021-07-29 01:13:49,503 DEBUG (0.001) SELECT `regions`.`id`, `regions`.`name` FROM `regions` WHERE `regions`.`id` = 3 LIMIT 21; args=(3,)
+2021-07-29 01:13:49,506 DEBUG (0.001) SELECT `masters`.`id`, `masters`.`created_at`, `masters`.`updated_at`, `masters`.`kakao_id`, `masters`.`certification`, `masters`.`business`, `masters`.`introduction`, `masters`.`description`, `masters`.`name`, `masters`.`phone`, `masters`.`password`, `masters`.`email`, `masters`.`gender`, `masters`.`birth`, `masters`.`region_id`, `masters`.`profile_image`, `masters`.`main_service_id`, `masters`.`career` FROM `masters` WHERE (`masters`.`main_service_id` = 4 AND `masters`.`gender` = 'female' AND `masters`.`region_id` = 3 AND `masters`.`birth` BETWEEN '2006-07-29' AND '2016-07-29' AND `masters`.`career` BETWEEN 5 AND 10); args=(4, 'female', 3, '2006-07-29', '2016-07-29', 5, 10)
+2021-07-29 01:13:49,508 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`master_id` = 99; args=(99,)
+2021-07-29 01:13:49,509 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`master_id` = 99; args=(99,)
+2021-07-29 01:13:49,510 DEBUG (0.001) SELECT AVG(`reviews`.`rating`) AS `average` FROM `reviews` WHERE `reviews`.`master_id` = 511; args=(511,)
+2021-07-29 01:13:49,512 DEBUG (0.001) SELECT COUNT(*) AS `__count` FROM `reviews` WHERE `reviews`.`master_id` = 511; args=(511,)
