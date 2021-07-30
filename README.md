@@ -1,6 +1,3 @@
-# metGo (맺고)
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d04675fa-b8b5-456e-9513-ada606fff2a8/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d04675fa-b8b5-456e-9513-ada606fff2a8/Untitled.png)
-
 # metGo 프로젝트 Front-end / Back-end 소개
 * Soomgo 웹사이트의 (유저-고수 매칭) 기능을 모티브로 제작한 프로젝트입니다.
 * 짧은 프로젝트 기간동안 개발에 집중해야 하므로 디자인 및 기능의 기획 부분만 클론했습니다.
