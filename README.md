@@ -38,7 +38,7 @@ https://youtu.be/S5pPqUqrppY
 - 고수 마이페이지 (고수 정보 수정 및 추가, 이미지 AWS S3로 업로드)
 
 #### Review
-- 고수 상세페이지 (사용자 리뷰)
+- 고수 상세페이지 (사용자 리뷰 - paginator)
 
 ### **<신재>**
 ### Product
